@@ -18,11 +18,13 @@ docker run -d --rm --net=host -p 9001:9001 --name i-wanna-api --rm achimid/i-wan
 
 
 
-
+cd ../i-wanna-be-notified-front
+docker build -t achimid/i-wanna-front .
+docker run -d --rm --net=host -p 9000:9000 --name i-wanna-front --rm achimid/i-wanna-front:latest;
 
 cd ../i-wanna-be-notified-worker
 docker build -t achimid/i-wanna-worker .
-docker run -d --rm --net=host -p 9002:9002 --name i-wanna-worker --rm achimid/i-wanna-worker:latest;
+docker run -d --rm --net=host -p 9002:9002 --name i-wanna-worker-01 --rm achimid/i-wanna-worker:latest;
 
 cd ../i-wanna-be-notified-scheduler
 docker build -t achimid/i-wanna-scheduler .
