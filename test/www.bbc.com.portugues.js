@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 const url = "http://localhost:9001/api/v1"
 
 
-it('BBC', (done) => {
+it('BBC PT', (done) => {
 
     
     const path = "/sync/scraper"
