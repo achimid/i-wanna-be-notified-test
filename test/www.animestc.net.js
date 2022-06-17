@@ -13,7 +13,7 @@ it('AnimesTC', (done) => {
     const path = "/sync/scraper"
     const body = { 
         "url": "https://www.animestc.net/",
-        "scriptTarget": "[...new Set([...document.querySelectorAll('.episode-info-title')].map(i => i.innerText.trim()))]"
+        "scriptTarget": "[...new Set([...document.querySelectorAll('img.episode-image')].map(i => i.alt.trim()))]"
     }
 
     chai.request(url).post(path).send(body)
